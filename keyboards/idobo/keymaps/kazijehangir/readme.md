@@ -1,4 +1,4 @@
-# The default keymap for xd75, with led controls
+# The default keymap for idobo
 
 Compile using `qmk compile -kb idobo -km kazijehangir`.
 Flash using `qmk flash -kb idobo -km kazijehangir`.
