@@ -24,24 +24,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* QWERTY
  * .--------------------------------------------------------------------------------------------------------------------------------------.
- * | ESC    | 1      | 2      | 3      | 4      | 5      | -      | `      | =      | 6      | 7      | 8      | 9      | 0      | BACKSP |
+ * | ESC    | 1      | 2      | 3      | 4      | 5      | [      | \      | ]      | 6      | 7      | 8      | 9      | 0      | F13    |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-----------------|
- * | TAB    | Q      | W      | E      | R      | T      | [      | \      | ]      | Y      | U      | I      | O      | P      | '      |
+ * | TAB    | Q      | W      | E      | R      | T      | -      | `      | =      | Y      | U      | I      | O      | P      | '      |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-----------------+--------|
  * | LCTRL  | A      | S      | D      | F      | G      | HOME   | DEL    | PG UP  | H      | J      | K      | L      | ;      | ENTER  |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------------------------+--------|
  * | LSHIFT | Z      | X      | C      | V      | B      | END    | UP     | PG DN  | N      | M      | ,      | .      | /      | RSHIFT |
  * |--------+--------+--------+--------+--------+-----------------+--------+--------+--------+--------+-----------------+--------+--------|
- * | LCTRL  | LGUI   | LALT   | FN     | SPACE  | SPACE  | LEFT   | DOWN   | RIGHT  | BACKSP | BACKSP | FN     | RALT   | RGUI   | RCTRL  |
+ * | HYPR   | LGUI   | LALT   | FN     | SPACE  | SPACE  | LEFT   | DOWN   | RIGHT  | SPACE | BACKSP | FN     | RALT   | RGUI   | RCTRL  |
  * '--------------------------------------------------------------------------------------------------------------------------------------'
  */
 
  [_QW] = LAYOUT_ortho_5x15( /* QWERTY */
-    KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_MINS, KC_GRV,  KC_EQL,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_F13, \
-    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_LBRC, KC_BSLS, KC_RBRC, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_QUOT, \
+    KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_LBRC, KC_BSLS, KC_RBRC, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_F13, \
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_MINS, KC_GRV,  KC_EQL, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_QUOT, \
     LCTL_T(KC_ESC), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_HOME, KC_DEL,  KC_PGUP, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,  \
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_END,  KC_UP,   KC_PGDN, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
-    KC_F14, KC_LGUI, KC_LALT, MO(_FN), KC_SPC,  KC_SPC,  KC_LEFT, KC_DOWN, KC_RGHT, KC_BSPC, KC_BSPC,  MO(_LED), KC_RALT, KC_RGUI, KC_RCTL  \
+    KC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_END,  KC_UP,   KC_PGDN, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSPC, \
+    KC_HYPR, KC_LGUI, KC_LALT, MO(_FN), KC_SPC,  KC_SPC,  KC_LEFT, KC_DOWN, KC_RGHT, KC_SPC, KC_BSPC,  MO(_LED), KC_RALT, KC_RGUI, RCTL_T(KC_ESC)  \
  ),
 
 /* NAV FUNCTIONALITY
@@ -59,11 +59,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
  [_FN] = LAYOUT_ortho_5x15( /* FUNCTION */
-    _______, _______, _______   , _______   ,    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
-    _______, _______, KC_MS_BTN1, KC_MS_UP  , KC_MS_BTN2, _______, _______, _______, _______, _______, _______, KC_UP  , _______, _______, _______, \
-    _______, _______, KC_MS_LEFT, KC_MS_DOWN,KC_MS_RIGHT, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_LEFT, _______, _______, \
-    _______, _______, _______   , _______   , _______   , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
-    _______, _______, _______   , _______   , _______   , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______ \
+    _______, _______, _______   , _______   ,    _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, \
+    _______, _______, KC_MS_BTN1, KC_MS_UP  , KC_MS_BTN2, _______, _______, _______, _______, _______, _______, KC_UP  , _______,  _______, _______, \
+    _______, _______, KC_MS_LEFT, KC_MS_DOWN,KC_MS_RIGHT, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______, \
+    _______, _______, _______   , _______   , _______   , _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, \
+    _______, _______, _______   , _______   , _______   , _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______ \
  ),
 
 /* LED FUNCTIONALITY
